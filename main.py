@@ -4,7 +4,7 @@ def mergeSort(arr):
     """
     # Base case: arrays with 0 or 1 element are already sorted
     if len(arr) > 1:
-        # 1. Recursive splitting of the array [cite: 29]
+        # 1. Recursive splitting of the array
         mid = len(arr) // 2
         left_half = arr[:mid]
         right_half = arr[mid:]
@@ -13,7 +13,7 @@ def mergeSort(arr):
         mergeSort(left_half)
         mergeSort(right_half)
 
-        # 2. Merge function implementation [cite: 30]
+        # 2. Merge function implementation
         i = j = k = 0
 
         # Compare elements from both halves and place the smaller one in the main array
@@ -69,7 +69,7 @@ def activitySelection(start_times, finish_times):
             selected_activities.append(activities[i])
             last_finish_time = activities[i][1]
 
-    # Calculate the total number of activities selected [cite: 49]
+    # Calculate the total number of activities selected
     total_selected = len(selected_activities)
     
     # Returns the selected activities and the total count 
@@ -82,7 +82,7 @@ def knapsack(weights, values, capacity):
     """
     n = len(values)
     
-    # Initialize a 2D table with zeros [cite: 58]
+    # Initialize a 2D table with zeros
     # dp[i][w] will store the max value using the first 'i' items with capacity 'w'
     dp = [[0 for _ in range(capacity + 1)] for _ in range(n + 1)]
 
@@ -97,5 +97,5 @@ def knapsack(weights, values, capacity):
                 # If the item is too heavy, we must exclude it
                 dp[i][w] = dp[i-1][w]
 
-    # The bottom-right cell contains the maximum value achievable [cite: 61]
+    # The bottom-right cell contains the maximum value achievable
     return dp[n][capacity]
